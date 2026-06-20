@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahir Digital | Premium Google Optimization</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#09090B",
+                        card: "#111114",
+                        border: "rgba(255,255,255,0.06)",
+                        primary: {
+                            DEFAULT: "#DC143C",
+                            hover: "#B91032",
+                        },
+                        secondary: "#7F1D1D",
+                        muted: "#A1A1AA",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #09090B;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .noise-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.03;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        /* FAQ Accordion */
+        .faq-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        /* Pulse Animation */
+        @keyframes customPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.2); }
+        }
+        .animate-custom-pulse {
+            animation: customPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/30 antialiased">
+
+    <div class="noise-bg"></div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-background/50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-wider flex items-center gap-2">
+                <span class="text-primary">ZAHIR</span> DIGITAL
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#process" class="hover:text-white transition-colors">Process</a>
+                <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </div>
+            <a href="#audit" class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-neutral-200 transition-colors">
+                Free Audit
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-40 pb-20 px-6 lg:pt-48 lg:pb-32">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative z-10 animate-on-scroll">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm text-muted mb-6">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-primary"></i>
+                    Helping Garages Across Sharjah Get Found
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                    When Drivers Search Google... <br/>
+                    <span class="text-muted">Will They Find Your Garage?</span>
+                </h1>
+                <p class="text-lg text-muted mb-8 max-w-xl leading-relaxed">
+                    Every day, people search for workshops in Sharjah. Most call the businesses appearing first. If your garage isn't there, you're losing customers before they even know your name.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#audit" class="bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-semibold transition-colors flex items-center gap-2">
+                        Get Free Audit
+                    </a>
+                    <a href="https://wa.me/971502217005" target="_blank" class="bg-card border border-white/10 hover:bg-white/5 text-white px-8 py-4 rounded-full font-semibold transition-colors flex items-center gap-2">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive Google Card -->
+            <div class="relative z-10 w-full max-w-md mx-auto animate-on-scroll delay-200">
+                <div class="bg-[#202124] rounded-2xl p-6 border border-white/10 shadow-2xl">
+                    <div class="bg-[#303134] rounded-full px-5 py-3 flex items-center gap-3 mb-6">
+                        <i data-lucide="search" class="w-5 h-5 text-muted"></i>
+                        <span class="text-white/90 font-medium">car workshop sharjah</span>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <!-- Result 1 -->
+                        <div class="flex flex-col gap-1 border-b border-white/5 pb-4">
+                            <span class="text-[#8AB4F8] text-lg font-medium hover:underline cursor-pointer">Competitor Garage 1</span>
+                            <div class="flex items-center gap-1 text-sm text-muted">
+                                <span class="text-white">4.8</span>
+                                <div class="flex text-[#FABB05]">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span>(163)</span>
+                            </div>
+                        </div>
+                        <!-- Result 2 -->
+                        <div class="flex flex-col gap-1 border-b border-white/5 pb-4">
+                            <span class="text-[#8AB4F8] text-lg font-medium hover:underline cursor-pointer">Competitor Garage 2</span>
+                            <div class="flex items-center gap-1 text-sm text-muted">
+                                <span class="text-white">4.7</span>
+                                <div class="flex text-[#FABB05]">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span>(206)</span>
+                            </div>
+                        </div>
+                        <!-- Result 3 -->
+                        <div class="flex flex-col gap-1 border-b border-white/5 pb-4">
+                            <span class="text-[#8AB4F8] text-lg font-medium hover:underline cursor-pointer">Competitor Garage 3</span>
+                            <div class="flex items-center gap-1 text-sm text-muted">
+                                <span class="text-white">4.6</span>
+                                <div class="flex text-[#FABB05]">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span>(249)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card border border-red-500/30 rounded-xl p-4 relative overflow-hidden group hover:border-red-500/60 transition-colors">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Your Garage</h4>
+                                <p class="text-sm text-red-400">Not showing in top results</p>
+                            </div>
+                            <div class="w-3 h-3 bg-red-500 rounded-full animate-custom-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="py-20 border-y border-white/5 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="flex flex-col items-center text-center animate-on-scroll">
+                    <i data-lucide="search" class="w-8 h-8 text-primary mb-4 opacity-80"></i>
+                    <span class="text-4xl lg:text-5xl font-bold text-white mb-2">75%</span>
+                    <span class="text-sm text-muted font-medium">Drivers check Google first</span>
+                </div>
+                <div class="flex flex-col items-center text-center animate-on-scroll delay-100">
+                    <i data-lucide="trending-up" class="w-8 h-8 text-primary mb-4 opacity-80"></i>
+                    <span class="text-4xl lg:text-5xl font-bold text-white mb-2">3X</span>
+                    <span class="text-sm text-muted font-medium">More calls from optimized profiles</span>
+                </div>
+                <div class="flex flex-col items-center text-center animate-on-scroll delay-200">
+                    <i data-lucide="smartphone" class="w-8 h-8 text-primary mb-4 opacity-80"></i>
+                    <span class="text-4xl lg:text-5xl font-bold text-white mb-2">90%</span>
+                    <span class="text-sm text-muted font-medium">Searches happen on mobile</span>
+                </div>
+                <div class="flex flex-col items-center text-center animate-on-scroll delay-300">
+                    <i data-lucide="clock" class="w-8 h-8 text-primary mb-4 opacity-80"></i>
+                    <span class="text-4xl lg:text-5xl font-bold text-white mb-2">24/7</span>
+                    <span class="text-sm text-muted font-medium">Visibility even when closed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-4">You're Probably Losing Customers Right Now</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-card border border-white/5 p-8 rounded-2xl hover:bg-white/[0.03] transition-colors animate-on-scroll">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="search-x" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Someone searches</h3>
+                    <p class="text-muted leading-relaxed">A driver in Sharjah searches for 'car repair near me'.</p>
+                </div>
+                <div class="bg-card border border-white/5 p-8 rounded-2xl hover:bg-white/[0.03] transition-colors animate-on-scroll delay-100">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="alert-circle" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Google recommends competitors</h3>
+                    <p class="text-muted leading-relaxed">Your garage doesn't appear in the top 3 map pack results.</p>
+                </div>
+                <div class="bg-card border border-white/5 p-8 rounded-2xl hover:bg-white/[0.03] transition-colors animate-on-scroll delay-200">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="phone-off" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Customer books elsewhere</h3>
+                    <p class="text-muted leading-relaxed">They call the first shop they see. You lose the lead.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY ZAHIR DIGITAL -->
+    <section id="services" class="py-24 px-6 bg-card border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 animate-on-scroll">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-4">The Optimization Engine</h2>
+                <p class="text-muted text-lg max-w-2xl">Everything you need to dominate local search results and turn clicks into garage visits.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-background border border-white/5 p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300 animate-on-scroll">
+                    <i data-lucide="map-pin" class="w-8 h-8 text-primary mb-6"></i>
+                    <h3 class="text-lg font-semibold mb-3">Google Business Optimization</h3>
+                    <p class="text-sm text-muted leading-relaxed">Complete profile setup ensuring you rank for high-intent local keywords.</p>
+                </div>
+                <div class="bg-background border border-white/5 p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300 animate-on-scroll delay-100">
+                    <i data-lucide="star" class="w-8 h-8 text-primary mb-6"></i>
+                    <h3 class="text-lg font-semibold mb-3">Review Growth Strategy</h3>
+                    <p class="text-sm text-muted leading-relaxed">Automated systems to capture 5-star reviews from happy customers.</p>
+                </div>
+                <div class="bg-background border border-white/5 p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300 animate-on-scroll delay-200">
+                    <i data-lucide="map" class="w-8 h-8 text-primary mb-6"></i>
+                    <h3 class="text-lg font-semibold mb-3">Citation Building</h3>
+                    <p class="text-sm text-muted leading-relaxed">Listing your garage across local UAE directories to build trust with Google.</p>
+                </div>
+                <div class="bg-background border border-white/5 p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300 animate-on-scroll delay-300">
+                    <i data-lucide="bar-chart" class="w-8 h-8 text-primary mb-6"></i>
+                    <h3 class="text-lg font-semibold mb-3">Monthly Visibility Reports</h3>
+                    <p class="text-sm text-muted leading-relaxed">Transparent tracking of your search rankings and inbound call volume.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="process" class="py-32 px-6 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20 animate-on-scroll">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-4">A Simple Path To Growth</h2>
+            </div>
+            <div class="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
+                <!-- Step 1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse animate-on-scroll">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full border border-primary/30 bg-card text-primary font-bold shadow-[0_0_15px_rgba(220,20,60,0.2)] shrink-0 md:order-1 md:-translate-x-1/2">
+                        1
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-card border border-white/5 hover:border-white/10 transition-colors">
+                        <h3 class="text-xl font-bold mb-2">Free Google Audit</h3>
+                        <p class="text-muted">We check how easily customers can find you and identify missed opportunities.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal animate-on-scroll">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full border border-primary/30 bg-card text-primary font-bold shadow-[0_0_15px_rgba(220,20,60,0.2)] shrink-0 md:order-1 md:translate-x-1/2">
+                        2
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-card border border-white/5 hover:border-white/10 transition-colors">
+                        <h3 class="text-xl font-bold mb-2">Optimization</h3>
+                        <p class="text-muted">Profile setup, keywords, high-quality photos, citations, and reviews.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse animate-on-scroll">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full border border-primary/30 bg-card text-primary font-bold shadow-[0_0_15px_rgba(220,20,60,0.2)] shrink-0 md:order-1 md:-translate-x-1/2">
+                        3
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-card border border-white/5 hover:border-white/10 transition-colors">
+                        <h3 class="text-xl font-bold mb-2">Visibility</h3>
+                        <p class="text-muted">Appear higher, receive more calls, and attract new customers consistently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-24 px-6 bg-card border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-4">Transparent Pricing</h2>
+                <p class="text-muted text-lg">No hidden fees. Just results.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                <!-- Tier 1 -->
+                <div class="relative bg-background rounded-3xl p-8 border border-white/5 animate-on-scroll">
+                    <h3 class="text-xl font-semibold mb-2">Visibility</h3>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-sm font-medium text-muted">AED</span>
+                        <span class="text-4xl font-bold">750</span>
+                        <span class="text-muted">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Google Profile Optimization</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Monthly Posts</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Local Citations</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Basic Support</span></li>
+                    </ul>
+                    <a href="https://wa.me/971502217005" class="block w-full py-3 rounded-full text-center font-semibold transition-colors bg-white/5 hover:bg-white/10 text-white">Start Today</a>
+                </div>
+                
+                <!-- Tier 2 -->
+                <div class="relative bg-background rounded-3xl p-8 border border-primary shadow-[0_0_30px_rgba(220,20,60,0.1)] animate-on-scroll delay-100">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Most Popular
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Lead</h3>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-sm font-medium text-muted">AED</span>
+                        <span class="text-4xl font-bold">1,250</span>
+                        <span class="text-muted">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Google Profile Optimization</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Monthly Posts</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Review Management</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Reports</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Local Citations</span></li>
+                    </ul>
+                    <a href="https://wa.me/971502217005" class="block w-full py-3 rounded-full text-center font-semibold transition-colors bg-primary hover:bg-primary-hover text-white">Start Today</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="relative bg-background rounded-3xl p-8 border border-white/5 animate-on-scroll delay-200">
+                    <h3 class="text-xl font-semibold mb-2">Dominance</h3>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-sm font-medium text-muted">AED</span>
+                        <span class="text-4xl font-bold">2,000</span>
+                        <span class="text-muted">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Everything in Lead</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Advanced SEO Strategy</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Competitor Analysis</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Priority 24/7 Support</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i><span class="text-sm text-white/80">Custom Campaigns</span></li>
+                    </ul>
+                    <a href="https://wa.me/971502217005" class="block w-full py-3 rounded-full text-center font-semibold transition-colors bg-white/5 hover:bg-white/10 text-white">Start Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-card border border-white/5 p-8 rounded-2xl relative animate-on-scroll">
+                    <div class="flex text-[#FABB05] mb-6">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6 font-medium">"We started appearing for searches we never showed up in before. Call volume doubled in a month."</p>
+                    <div>
+                        <p class="font-semibold">Garage Owner</p>
+                        <p class="text-sm text-muted">Sharjah</p>
+                    </div>
+                </div>
+                <div class="bg-card border border-white/5 p-8 rounded-2xl relative animate-on-scroll delay-100">
+                    <div class="flex text-[#FABB05] mb-6">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6 font-medium">"Customers began mentioning Google when calling us. The investment paid for itself in week one."</p>
+                    <div>
+                        <p class="font-semibold">Garage Owner</p>
+                        <p class="text-sm text-muted">Industrial Area</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 px-6 bg-card border-t border-white/5">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-4">Common Questions</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="border border-white/5 bg-background rounded-2xl overflow-hidden animate-on-scroll">
+                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold">How long does it take?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-muted"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-5 text-muted">Optimization starts immediately. You can typically see initial visibility improvements within 2 to 4 weeks depending on your local competition.</div>
+                    </div>
+                </div>
+                <div class="border border-white/5 bg-background rounded-2xl overflow-hidden animate-on-scroll">
+                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold">Do I need a website?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-muted"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-5 text-muted">No! A highly optimized Google Business Profile acts as your digital storefront and can generate calls directly from search results.</div>
+                    </div>
+                </div>
+                <div class="border border-white/5 bg-background rounded-2xl overflow-hidden animate-on-scroll">
+                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold">Can I stop anytime?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-muted"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-5 text-muted">Yes, our services operate on a month-to-month basis. We believe in earning your business every single month.</div>
+                    </div>
+                </div>
+                <div class="border border-white/5 bg-background rounded-2xl overflow-hidden animate-on-scroll">
+                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold">What if I already have customers?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-muted"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-5 text-muted">Great! We help you capture more of the market share, ensuring when your current customers' friends search, they find you too.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="audit" class="py-32 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/10 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight animate-on-scroll">
+                Ready To Stop Sending <br class="hidden md:block"/> Customers To Competitors?
+            </h2>
+            <p class="text-xl text-muted mb-10 max-w-2xl mx-auto animate-on-scroll delay-100">
+                Get a free, no-commitment Google visibility audit. No technical knowledge required from you.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-on-scroll delay-200">
+                <a href="https://wa.me/971502217005" class="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 text-lg">
+                    Book Free Audit
+                </a>
+                <a href="https://wa.me/971502217005" class="w-full sm:w-auto bg-card border border-white/10 hover:bg-white/5 text-white px-8 py-4 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 text-lg">
+                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                    WhatsApp Us
+                </a>
+            </div>
+            
+            <div class="mt-8 flex items-center justify-center gap-6 text-sm text-muted animate-on-scroll delay-300">
+                <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-primary"></i> No commitment</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Fast response</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 bg-background py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <div class="font-bold text-xl tracking-wider mb-2">
+                    <span class="text-primary">ZAHIR</span> DIGITAL
+                </div>
+                <p class="text-muted text-sm max-w-xs">Helping garages become easier to find on Google.</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-2 text-sm text-muted">
+                <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Sharjah, UAE</span>
+                <a href="tel:+971502217005" class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> +971 50 221 7005
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 text-center text-xs text-muted/60">
+            &copy; 2026 Zahir Digital. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts for Icons and Animations -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize Icons
+            lucide.createIcons();
+            
+            // Scroll Animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+
+            // FAQ Accordion
+            document.querySelectorAll('.faq-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('.faq-icon');
+                    
+                    if (content.style.maxHeight) {
+                        // Close
+                        content.style.maxHeight = null;
+                        content.style.opacity = "0";
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        // Close all others first
+                        document.querySelectorAll('.faq-content').forEach(c => {
+                            c.style.maxHeight = null;
+                            c.style.opacity = "0";
+                        });
+                        document.querySelectorAll('.faq-icon').forEach(i => {
+                            i.style.transform = 'rotate(0deg)';
+                        });
+                        
+                        // Open clicked
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.opacity = "1";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
